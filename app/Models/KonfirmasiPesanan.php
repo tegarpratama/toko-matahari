@@ -12,4 +12,9 @@ class KonfirmasiPesanan extends Model
     protected $guarded = [];
     protected $table = 'konfirmasi_pesanan';
     public $timestamps = false;
+
+    public function pesanan()
+    {
+        return $this->belongsTo(Pesanan::class, 'id', 'pesanan_id');
+    }
 }

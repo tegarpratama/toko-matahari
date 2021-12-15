@@ -22,7 +22,7 @@ class AuthenticationController extends Controller
             return redirect()->route('admin.dashboard');
         }
 
-        return back()->with('status', 'Username atau password salah');
+        return back()->with('error', 'Username atau password salah');
     }
 
     public function logoutAdmin()
@@ -68,7 +68,7 @@ class AuthenticationController extends Controller
             return redirect()->route('home');
         }
 
-        return back()->with('status', 'Username atau password salah');
+        return back()->with('error', 'Username atau password salah');
     }
 
     public function logoutUser()

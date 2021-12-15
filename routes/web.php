@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PesananController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +50,29 @@ Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin', 'as' => 'admin.
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    // Produk
+    Route::get('/produk', [ProdukController::class, 'index'])->name('produk.index');
+    Route::get('/produk/tambah', [ProdukController::class, 'create'])->name('produk.create');
+    Route::get('/produk/{id}/detail', [ProdukController::class, 'show'])->name('produk.show');
+    Route::post('/produk', [ProdukController::class, 'store'])->name('produk.store');
+    Route::get('/produk/{id}/edit', [ProdukController::class, 'edit'])->name('produk.edit');
+    Route::put('/produk/{id}', [ProdukController::class, 'update'])->name('produk.update');
+    Route::delete('/produk/{id}', [ProdukController::class, 'destroy'])->name('produk.destroy');
 
+    // Member
+    Route::get('/member', [MemberController::class, 'index'])->name('member.index');
+
+    // Pesanan
+    Route::get('/pesanan', [PesananController::class, 'index'])->name('pesanan.index');
+    Route::get('/pesanan/{id}/detail', [PesananController::class, 'show'])->name('pesanan.show');
+    Route::put('/pesanan/{id}', [PesananController::class, 'update'])->name('pesanan.update');
+
+    // Profile
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::put('/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
+
+    // Password
+    Route::get('/password', [PasswordController::class, 'index'])->name('password.index');
+    Route::put('/password/{id}', [PasswordController::class, 'update'])->name('password.update');
 });
 

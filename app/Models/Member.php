@@ -14,4 +14,9 @@ class Member extends Authenticatable
     protected $table = 'member';
     protected $guarded = [];
     public $timestamps = false;
+
+    public function pesanan()
+    {
+        return $this->hasMany(Pesanan::class, 'id', 'member_id');
+    }
 }

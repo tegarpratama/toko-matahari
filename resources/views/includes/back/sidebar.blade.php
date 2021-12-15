@@ -15,15 +15,15 @@
 
                 <li class="label">Data Master</li>
                 <li class="{{ Request::routeIs('admin.produk.*') ? 'active' : '' }}">
-                    <a href=""><i class="ti-package"></i> Data Produk </a>
+                    <a href="{{ route('admin.produk.index') }}"><i class="ti-package"></i> Data Produk </a>
                 </li>
-                <li class="{{ Request::routeIs('admin.user.*') ? 'active' : '' }}">
-                    <a href=""><i class="ti-user"></i>Data User</a>
+                <li class="{{ Request::routeIs('admin.member.*') ? 'active' : '' }}">
+                    <a href="{{ route('admin.member.index') }}"><i class="ti-user"></i>Data User</a>
                 </li>
 
                 <li class="label">Pesanan</li>
                 <li class="{{ Request::routeIs('admin.pesanan.*') ? 'active' : '' }}">
-                    <a href=""><i class="ti-shopping-cart"></i> Data Pesanan</a>
+                    <a href="{{ route('admin.pesanan.index') }}"><i class="ti-shopping-cart"></i> Data Pesanan</a>
                 </li>
                 {{-- <li class="label">Laporan</li>
                 <li class="{{ Request::routeIs('admin.laporan.*') ? 'active' : '' }}">
@@ -31,10 +31,10 @@
                 </li> --}}
                 <li class="label">Profil</li>
                 <li class="{{ Request::routeIs('admin.profil.*') ? 'active' : '' }}">
-                    <a href=""><i class="ti-user"></i> Profil </a>
+                    <a href="{{ route('admin.profile.index') }}"><i class="ti-user"></i> Profil </a>
                 </li>
                 <li class="{{ Request::routeIs('admin.password.*') ? 'active' : '' }}">
-                    <a href="}"><i class="ti-key"></i> Ubah Password </a>
+                    <a href="{{ route('admin.password.index') }}"><i class="ti-key"></i> Ubah Password </a>
                 </li>
             </ul>
         </div>

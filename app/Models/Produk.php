@@ -12,4 +12,14 @@ class Produk extends Model
     protected $table = 'produk';
     protected $guarded = [];
     public $timestamps = false;
+
+    public function pesananDetail()
+    {
+        return $this->hasMany(PesananDetail::class, 'id' ,'produk_id');
+    }
+
+    public function keranjang()
+    {
+        return $this->hasOne(Keranjang::class, 'id', 'produk_id');
+    }
 }

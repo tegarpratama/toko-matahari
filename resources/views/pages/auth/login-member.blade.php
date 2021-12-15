@@ -31,6 +31,16 @@
                                     </div>
                                 @endif
 
+                                @if (session('error'))
+                                    <div class="row mt-3 mb-3">
+                                        <div class="col">
+                                            <div class="alert alert-danger text-center" role="alert">
+                                                <strong>{{ session('error') }}</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+
                                 <form method="POST" action="{{ route('member.post.login') }}" class="mt-4 mb-5 login-input">
                                     @csrf
                                     <div class="form-group">

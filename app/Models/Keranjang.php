@@ -12,4 +12,9 @@ class Keranjang extends Model
     protected $guarded = [];
     protected $table = 'keranjang';
     public $timestamps = false;
+
+    public function produk()
+    {
+        return $this->belongsTo(Produk::class, 'produk_id', 'id');
+    }
 }
