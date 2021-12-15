@@ -2,7 +2,7 @@
     <div class="container d-flex align-items-center">
 
         <div class="logo me-auto">
-            <h1><a href="{{ route('home') }}">ALUMNI TI</a></h1>
+            <h1><a href="{{ route('home') }}">TOKO MATAHARI</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
@@ -12,9 +12,9 @@
                 <li><a class="nav-link scrollto" href="">About</a></li>
                 <li class="dropdown"><a href="#"><span>Shop<i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="">All Product</a></li>
-                        <li><a href="">Popular Item</a></li>
-                        <li><a href="">New Arrival</a></li>
+                        <li><a href="{{ route('produk.index') }}">All Product</a></li>
+                        <li><a href="{{ route('produk.populer') }}">Popular Item</a></li>
+                        <li><a href="{{ route('produk.new') }}">New Arrival</a></li>
                     </ul>
                 </li>
 

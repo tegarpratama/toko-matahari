@@ -9,6 +9,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PasswordController;
+use App\Http\Controllers\HomeProdukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,12 @@ use App\Http\Controllers\PasswordController;
 
 // Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// Produk
+Route::get('/produk', [HomeProdukController::class, 'index'])->name('produk.index');
+Route::get('/produk/populer', [HomeProdukController::class, 'populer'])->name('produk.populer');
+Route::get('/produk/new', [HomeProdukController::class, 'new'])->name('produk.new');
+Route::get('/produk/{id}', [HomeProdukController::class, 'show'])->name('produk.show');
 
 // Login Member
 Route::get('/login', [AuthenticationController::class, 'indexUser'])->name('member.index.login');

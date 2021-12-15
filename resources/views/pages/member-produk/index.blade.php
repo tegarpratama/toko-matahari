@@ -5,18 +5,11 @@
 @endpush
 
 @section('content')
-<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="container text-md-left" data-aos="fade-up">
-        <h1>Selamat datang di <span>TOKO MATAHARI</span></h1>
-        <h2>Menyediakan segala kebutuhan fashion mu</h2>
-    </div>
-</section>
-
 <main id="main">
-    <section id="portfolio" class="portfolio">
+    <section id="portfolio" class="portfolio mt-5">
         <div class="container">
             <div class="section-title">
-                <h2>Produk Pilihan</h2>
+                <h2>{{ $title }}</h2>
             </div>
 
             <div class="row portfolio-container">
@@ -35,12 +28,6 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
-
-            <div class="row mt-4">
-                <div class="col text-center">
-                    <a class="font-weight-bold" href="{{ route('produk.index') }}">LIHAT SEMUA PRODUK<i class='bx bx-right-arrow-alt'></i></a>
-                </div>
             </div>
         </div>
     </section>
