@@ -10,6 +10,11 @@ use App\Http\Controllers\PesananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\HomeProdukController;
+use App\Http\Controllers\MemberProfileController;
+use App\Http\Controllers\MemberPasswordController;
+use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CheckoutSuccessController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +52,30 @@ Route::group(['prefix' => 'admin/login', 'as' => 'login.', 'middleware' => 'gues
 Route::group(['prefix' => '/', 'as' => 'member.','middleware' => 'auth:member'], function() {
     // Logout
     Route::post('/logout', [AuthenticationController::class, 'logoutUser'])->name('logout');
+
+    // Profile
+    Route::get('/profile', [MemberProfileController::class, 'index'])->name('profile.index');
+    Route::put('/profile/{id}', [MemberProfileController::class, 'update'])->name('profile.update');
+
+    // Password
+    Route::get('/password', [MemberPasswordController::class, 'index'])->name('password.index');
+    Route::put('/password/{id}', [MemberPasswordController::class, 'update'])->name('password.update');
+
+    // Keranjang
+    Route::get('/cart', [KeranjangController::class, 'index'])->name('keranjang.index');
+    Route::post('/cart', [KeranjangController::class, 'store'])->name('keranjang.store');
+    Route::delete('/cart/{id}', [KeranjangController::class, 'destroy'])->name('keranjang.destroy');
+
+    // Checkout
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+    Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+
+    // Util
+    Route::get('/kota/{id}',[CheckoutController::class, 'get_city']);
+    Route::get('/destination={city_destination}&weight={weight}&courier={courier}',[CheckoutController::class, 'get_ongkir']);
+
+    // Checkout Success
+    Route::get('/checkout-success',[CheckoutSuccessController::class, 'index'])->name('checkout.success');
 });
 
 // ADMIN

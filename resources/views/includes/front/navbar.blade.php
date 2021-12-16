@@ -20,15 +20,15 @@
 
                 @if (auth()->guard('member')->user())
                     <li class="">
-                        <a href=""><i class='bx bx-shopping-bag bx-sm'></i></a>
+                        <a href="{{ route('member.keranjang.index') }}"><i class='bx bx-shopping-bag bx-sm'></i></a>
                     </li>
 
                     <li class="dropdown"><a href="#"><span>{{ auth()->guard('member')->user()->nama }}</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="">Pesanan Saya</a></li>
                             <hr>
-                            <li><a href="">Profil Saya</a></li>
-                            <li><a href="">Ubah Password</a></li>
+                            <li><a href="{{ route('member.profile.index') }}">Profil Saya</a></li>
+                            <li><a href="{{ route('member.password.index') }}">Ubah Password</a></li>
                             <li><a href="" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a></li>
                             <form id="logout-form" action="{{ route('member.logout') }}" method="POST" class="d-none">
                                 @csrf
