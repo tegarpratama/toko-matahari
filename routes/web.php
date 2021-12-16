@@ -15,6 +15,8 @@ use App\Http\Controllers\MemberPasswordController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CheckoutSuccessController;
+use App\Http\Controllers\HomePesananController;
+use App\Http\Controllers\HomeKonfirmasiPesananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,6 +78,13 @@ Route::group(['prefix' => '/', 'as' => 'member.','middleware' => 'auth:member'],
 
     // Checkout Success
     Route::get('/checkout-success',[CheckoutSuccessController::class, 'index'])->name('checkout.success');
+
+    // Pesanan
+    Route::get('/pesanan',[HomePesananController::class, 'index'])->name('pesanan.index');
+
+    // Pesanan
+    Route::get('/konfirmasi-pesanan/{id}',[HomeKonfirmasiPesananController::class, 'show'])->name('konfirmasi-pesanan.show');
+    Route::post('/konfirmasi-pesanan',[HomeKonfirmasiPesananController::class, 'store'])->name('konfirmasi-pesanan.store');
 });
 
 // ADMIN

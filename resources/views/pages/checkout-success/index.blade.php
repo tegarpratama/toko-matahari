@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
+                    <div class="card mb-4">
                         <div class="card-header">
                             <strong>Checkout Berhasil</strong>
                         </div>
@@ -22,8 +22,8 @@
                                 <li>Total pembayaran <strong>@convert($pesanan->total)</strong></li>
                             </ol>
                             <br>
-                            <p>Jika sudah melalukan pembayaran, harap upload bukti transfer pada <a href="">LINK INI</a></p>
-                            <a href="" class="btn btn-dark">Kembali</a>
+                            <p>Jika sudah melalukan pembayaran, harap upload bukti transfer pada <a href="{{ route('member.konfirmasi-pesanan.show', $pesanan->id) }}">LINK INI</a></p>
+                            <a href="{{ route('produk.index') }}" class="btn btn-dark">Kembali</a>
                         </div>
                     </div>
                 </div>

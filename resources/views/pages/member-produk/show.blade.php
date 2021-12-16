@@ -59,8 +59,18 @@
 
                         @if ($produk->stok > 1)
                             <div class="row d-flex justify-content-end mt-5">
+                                <div class="col">
+                                    <a href="{{ route('produk.index') }}" class="btn btn-secondary">
+                                        <i class='bx bxs-chevron-left mr-1'></i>
+                                        Kembali
+                                    </a>
+                                </div>
                                 <div class="col-5">
-                                    <form action="{{ route('member.keranjang.store') }}" method="POST">
+                                    @if (auth()->guard('member')->user())
+                                        <form action="{{ route('member.keranjang.store') }}" method="POST">
+                                    @else
+                                        <form action="{{ route('member.index.login') }}" method="GET">
+                                    @endif
                                         @csrf
                                         <div class="input-group mb-3">
                                             <input type="hidden" name="produk_id" value="{{ $produk->id }}">

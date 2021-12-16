@@ -25,7 +25,7 @@
 
                     <li class="dropdown"><a href="#"><span>{{ auth()->guard('member')->user()->nama }}</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="">Pesanan Saya</a></li>
+                            <li><a href="{{ route('member.pesanan.index') }}">Pesanan Saya</a></li>
                             <hr>
                             <li><a href="{{ route('member.profile.index') }}">Profil Saya</a></li>
                             <li><a href="{{ route('member.password.index') }}">Ubah Password</a></li>

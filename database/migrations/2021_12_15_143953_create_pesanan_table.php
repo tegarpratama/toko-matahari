@@ -17,7 +17,7 @@ class CreatePesananTable extends Migration
             $table->id();
             $table->integer('member_id');
             $table->string('invoice', 15);
-            $table->integer('weight');
+            $table->integer('berat');
             $table->string('kurir', 10);
             $table->string('layanan', 10);
             $table->integer('ongkir');

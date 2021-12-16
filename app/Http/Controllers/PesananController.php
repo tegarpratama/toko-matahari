@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pesanan;
+use App\Models\KonfirmasiPesanan;
 
 class PesananController extends Controller
 {
@@ -45,7 +46,8 @@ class PesananController extends Controller
     {
         $pesanan = Pesanan::findOrFail($id);
         $data = [
-            'status' => $request->status
+            'status' => $request->status,
+            'resi' => $request->resi
         ];
         $pesanan->update($data);
 

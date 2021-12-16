@@ -47,6 +47,7 @@
                                     <th>Ongkir</th>
                                     <th>Total</th>
                                     <th>Status</th>
+                                    <th>No Resi</th>
                                     <th class="text-center">Tanggal</th>
                                 </thead>
                                 <tbody>
@@ -66,6 +67,7 @@
                                                     <span class="badge badge-success">{{ $p->status }}</span>
                                                 @endif
                                             </td>
+                                            <td>{{ $p->resi }}</td>
                                             <td class="text-center">{{ $p->tanggal }}</td>
                                         </tr>
                                     @empty

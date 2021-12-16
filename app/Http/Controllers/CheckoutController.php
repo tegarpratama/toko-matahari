@@ -39,7 +39,7 @@ class CheckoutController extends Controller
             'kurir' => $request->kurir,
             'layanan' => $request->layanan,
             'ongkir' => $request->ongkir,
-            'total' => $request->total,
+            'total' => $request->total + $request->ongkir,
             'alamat' => $request->alamat . ', ' . $request->kota,
             'status' => 'Belum Bayar',
             'resi' => null,
