@@ -53,7 +53,7 @@
                                         <label>Bukti Transfer</label>
                                         <div class="row">
                                             <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-                                                <img src="{{ url('storage/' . $pesanan->konfirmasiPesanan->bukti_transfer) }}" alt="bukti transfer" class="img-fluid">
+                                                <img src="{{ url('storage/bukti_transfer/' . $pesanan->konfirmasiPesanan->bukti_transfer) }}" alt="bukti transfer" class="img-fluid">
                                             </div>
                                         </div>
                                     </div>
