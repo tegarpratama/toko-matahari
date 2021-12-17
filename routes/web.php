@@ -17,6 +17,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CheckoutSuccessController;
 use App\Http\Controllers\HomePesananController;
 use App\Http\Controllers\HomeKonfirmasiPesananController;
+use App\Http\Controllers\LaporanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,6 +112,13 @@ Route::group(['middleware' => 'auth:admin', 'prefix' => 'admin', 'as' => 'admin.
     Route::get('/pesanan', [PesananController::class, 'index'])->name('pesanan.index');
     Route::get('/pesanan/{id}/detail', [PesananController::class, 'show'])->name('pesanan.show');
     Route::put('/pesanan/{id}', [PesananController::class, 'update'])->name('pesanan.update');
+    Route::get('/pesanan/{id}/cetak', [PesananController::class, 'print'])->name('pesanan.cetak');
+
+    // Laporan
+    Route::get('/laporan/produk', [LaporanController::class, 'produk'])->name('laporan.produk');
+    Route::get('/laporan/produk/cetak', [LaporanController::class, 'produkCetak'])->name('laporan.produk.cetak');
+    Route::get('/laporan/pesanan', [LaporanController::class, 'pesanan'])->name('laporan.pesanan');
+    Route::get('/laporan/pesanan/cetak', [LaporanController::class, 'pesananCetak'])->name('laporan.pesanan.cetak');
 
     // Profile
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');

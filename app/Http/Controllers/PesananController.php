@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pesanan;
 use App\Models\KonfirmasiPesanan;
+use PDF;
+use Carbon\Carbon;
 
 class PesananController extends Controller
 {
@@ -52,5 +54,20 @@ class PesananController extends Controller
         $pesanan->update($data);
 
         return redirect()->route('admin.pesanan.show', $pesanan->id)->with('status', 'Invoice berhasil diperbarui');
+    }
+
+    public function print($id)
+    {
+        $tanggal = Carbon::now()->locale('id')->isoFormat('LL');
+        $pesanan = Pesanan::with('pesananDetail.produk', 'konfirmasiPesanan')->findOrFail($id);
+
+        $pdf = PDF::loadView('pages.pesanan.print', [
+            'pesanan' => $pesanan,
+            'tanggal' => $tanggal
+        ]);
+
+        $fileName = $pesanan->invoice . '.pdf';
+
+        return $pdf->download($fileName);
     }
 }

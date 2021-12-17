@@ -25,10 +25,15 @@
                 <li class="{{ Request::routeIs('admin.pesanan.*') ? 'active' : '' }}">
                     <a href="{{ route('admin.pesanan.index') }}"><i class="ti-shopping-cart"></i> Data Pesanan</a>
                 </li>
-                {{-- <li class="label">Laporan</li>
-                <li class="{{ Request::routeIs('admin.laporan.*') ? 'active' : '' }}">
-                    <a href="{{ route('admin.laporan.index') }}"><i class="ti-shopping-cart"></i> Data Laporan</a>
-                </li> --}}
+
+                <li class="label">Data Laporan</li>
+                <li class="{{ Request::routeIs('admin.laporan.produk') ? 'active' : '' }}">
+                    <a href="{{ route('admin.laporan.produk') }}"><i class="ti-shopping-cart"></i>Laporan Barang</a>
+                </li>
+                <li class="{{ Request::routeIs('admin.laporan.pesanan') ? 'active' : '' }}">
+                    <a href="{{ route('admin.laporan.pesanan') }}"><i class="ti-shopping-cart"></i>Laporan Pemesanan</a>
+                </li>
+
                 <li class="label">Profil</li>
                 <li class="{{ Request::routeIs('admin.profil.*') ? 'active' : '' }}">
                     <a href="{{ route('admin.profile.index') }}"><i class="ti-user"></i> Profil </a>
