@@ -20,7 +20,7 @@ class CreateProdukTable extends Migration
             $table->text('deskripsi');
             $table->integer('berat');
             $table->integer('harga');
-            $table->boolean('populer')->default(0);
+            // $table->boolean('populer')->default(0);
             $table->string('gambar')->nullable();
             $table->timestamp('dibuat');
         });

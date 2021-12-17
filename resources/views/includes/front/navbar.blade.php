@@ -9,11 +9,11 @@
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-                <li><a class="nav-link scrollto" href="">About</a></li>
+                {{-- <li><a class="nav-link scrollto" href="">About</a></li> --}}
                 <li class="dropdown"><a href="#"><span>Shop<i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="{{ route('produk.index') }}">All Product</a></li>
-                        <li><a href="{{ route('produk.populer') }}">Popular Item</a></li>
+                        {{-- <li><a href="{{ route('produk.populer') }}">Popular Item</a></li> --}}
                         <li><a href="{{ route('produk.new') }}">New Arrival</a></li>
                     </ul>
                 </li>
