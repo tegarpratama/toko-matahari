@@ -52,6 +52,8 @@
                                     <button class="btn  btn-info submit w-100">MASUK</button>
 
                                 </form>
+
+                                <p class="text-center text-dark">Belum mempunyai akun? <a class="text-primary" href="{{ route('member.register') }}">Daftar di sini</a></p>
                             </div>
                         </div>
                     </div>

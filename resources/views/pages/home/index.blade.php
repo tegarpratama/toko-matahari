@@ -45,4 +45,6 @@
         </div>
     </section>
 </main>
+
+@include('includes.front.footer')
 @endsection

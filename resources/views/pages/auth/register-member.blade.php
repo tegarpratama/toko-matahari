@@ -82,6 +82,8 @@
 
                                     <button class="btn  btn-info submit w-100">Daftar</button>
                                 </form>
+
+                                <p class="text-center text-dark mt-4">Sudah mempunyai akun? <a class="text-primary" href="{{ route('member.index.login') }}">Login di sini</a></p>
                             </div>
                         </div>
                     </div>

@@ -17,8 +17,8 @@
                             <p>Terimakasih telah berbelanja.</p>
                             <p>Harap selesaikan pembayaran dengan tata cara:</p>
                             <ol>
-                                <li>Tranfer ke Bank <strong>BCA An. Darmansyah 4731220161</strong></li>
-                                <li>Tambahkan informasi <strong>{{ $pesanan->invoice }}</strong> atau konfirmasi melalui whatsapp <strong>0813 8855 8516</strong></li>
+                                <li>Tranfer ke Bank <strong>MANDIRI An. Santi 1130025650914</strong></li>
+                                <li>Tambahkan informasi <strong>{{ $pesanan->invoice }}</strong> atau konfirmasi melalui whatsapp <strong>+62 889-7602-1946</strong></li>
                                 <li>Total pembayaran <strong>@convert($pesanan->total)</strong></li>
                             </ol>
                             <br>

@@ -196,5 +196,25 @@
                 console.log(harga_ongkir, kota, layanan)
             });
         });
+
+        $('form').on('submit', function(e){
+            // e.preventDefault();
+
+            var harga_ongkir = $("#layanan option:selected").attr('data-ongkir');
+            var kota = $("#kota option:selected").attr('data-kota');
+            var layanan = $("#layanan option:selected").attr('data-layanan');
+
+            if (harga_ongkir == null) {
+                harga_ongkir = $("#layanan").prop("selectedIndex", 1);
+            }
+
+            if (layanan == null) {
+                layanan = $("#layanan").attr('data-layanan').prop("selectedIndex", 1);
+            }
+
+            $("input[name=ongkir]").val(harga_ongkir);
+            $("input[name=kota]").val(kota);
+            $("input[name=layanan]").val(layanan);
+        });
     </script>
 @endpush
