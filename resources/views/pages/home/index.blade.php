@@ -7,8 +7,8 @@
 @section('content')
 <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container text-md-left" data-aos="fade-up">
-        <h1>Selamat datang di <span>TOKO MATAHARI</span></h1>
-        <h2>Menyediakan segala kebutuhan fashion mu</h2>
+        <h1 class="text-secondary">Selamat datang di <span>TOKO MATAHARI</span></h1>
+        <h2 class="text-secondary">Menyediakan segala kebutuhan fashion mu</h2>
     </div>
 </section>
 

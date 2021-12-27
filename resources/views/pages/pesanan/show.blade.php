@@ -18,7 +18,7 @@
 
                 <div class="row mb-4">
                     <div class="col text-right">
-                        <a href="{{ route('admin.pesanan.cetak', $pesanan->id) }}" class="btn btn-sm btn-secondary"><i class="ti-download mr-2"></i> Cetak</a>
+                        <a target="_blank" href="{{ route('admin.pesanan.cetak', $pesanan->id) }}" class="btn btn-sm btn-secondary"><i class="ti-download mr-2"></i> Cetak</a>
                     </div>
                 </div>
 

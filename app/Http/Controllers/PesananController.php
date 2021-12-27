@@ -68,6 +68,6 @@ class PesananController extends Controller
 
         $fileName = $pesanan->invoice . '.pdf';
 
-        return $pdf->download($fileName);
+        return $pdf->stream($fileName, array("Attachment" => 0));
     }
 }

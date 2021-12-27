@@ -6,33 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Admin</title>
-    <link href="{{ asset('assets/back/css/lib/bootstrap.min.css') }}" rel="stylesheet">
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            text-align:center;
+        }
+
+        table td, table th {
+            border: 1px solid rgb(8, 8, 8);
+            padding: 2px;
+        }
+
+        table tr:nth-child(even){background-color: #f2f2f2;}
+
+        table tr:hover {background-color: #ddd;}
+
+        table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: rgb(0, 121, 190);
+            color: white;
+        }
+
+        .column {
+            font-size: 16px;
+            float: left;
+            width: 50%;
+            padding: 10px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
 </head>
 
 <body>
     <div class="row">
-        <div class="col">
-            <h6>{{ $pesanan->member->nama }}</h6>
-            <h6>{{ $pesanan->member->email }}</h6>
-            <h6>{{ $pesanan->member->no_telp }}</h6>
+        <div class="column">
+            <p>Nama : {{ $pesanan->member->nama }}</p>
+            <p>Email: {{ $pesanan->member->email }}</p>
+            <p>No Hp: {{ $pesanan->member->no_telp }}</p>
         </div>
-        <div class="col text-right">
-            <h5>INVOICE: #{{ $pesanan->invoice }}</h5>
-            <h6>{{ $pesanan->tanggal }}</h6>
-            <h6>
+        <div class="column" style="text-align: right;">
+            <p>INVOICE: #{{ $pesanan->invoice }}</p>
+            <p>{{ $pesanan->tanggal }}</p>
+            <p>
                 Status:
                 @if ($pesanan->status == 'Belum Bayar')
-                    <span class="badge badge-warning">{{ $pesanan->status }}</span>
+                    <span>{{ $pesanan->status }}</span>
                 @elseif($pesanan->status == 'Dibayar')
-                    <span class="badge badge-primary">{{ $pesanan->status }}</span>
+                    <span>{{ $pesanan->status }}</span>
                 @elseif($pesanan->status == 'Dikirim')
-                    <span class="badge badge-success">{{ $pesanan->status }}</span>
+                    <span>{{ $pesanan->status }}</span>
                 @endif
-            </h6>
-            <h6>No Resi: {{ $pesanan->resi }}</h6>
+            </p>
+            <p>No Resi: {{ $pesanan->resi ? $pesanan->resi : '-' }}</p>
         </div>
     </div>
-    <table class="table text-center table-bordered mb-4">
+    <table>
         <tr class="table-secondary">
             <th>Produk</th>
             <th>Gambar</th>
